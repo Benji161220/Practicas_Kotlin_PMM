@@ -24,7 +24,7 @@ class ListaTareas (){
     fun tareasCompletadas(){
         for(tarea : Tarea in tareas){
             if (tarea.completada){
-                println(tarea.mostrarInfo())
+                tarea.mostrarInfo()
             }
         }
     }

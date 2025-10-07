@@ -5,10 +5,9 @@ import java.util.Scanner
 fun main() {
     val sc = Scanner(System.`in`)
     println("Introduce tu nombre de usuario")
-    val nombre = sc.next()
+    val nombre = sc.nextLine()
     val lista = ListaTareas()
     val usuario = Usuario(nombre, lista)
-    val tarea = Tarea(0,"","")
     do {
         println("Elige una de las opciones usando el numero de la opcion \n" +
                 "1. Agregar tarea \n" +
@@ -21,7 +20,7 @@ fun main() {
         when(opcion){
             1 -> {
                 println(
-                    "Introduce en este orden la tarea \n" +
+                    "Introduce en este orden la tarea y sin usar espacios \n" +
                             "1. id, 2. titulo 3. descripcion"
                 )
                 val tarea = Tarea(sc.nextInt(),sc.next(),sc.next())
@@ -39,7 +38,7 @@ fun main() {
                 usuario.lista.eliminarTarea(sc.nextInt())
             }
             5 -> {
-                println(usuario.lista.tareasCompletadas())
+                usuario.lista.tareasCompletadas()
             }
 
         }
